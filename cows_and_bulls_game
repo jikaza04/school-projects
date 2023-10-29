@@ -1,0 +1,45 @@
+import random
+
+# Generate a random four-digit secret code with unique digits
+def secretCode():
+    digits = random.sample(range(10), 4)
+    return ''.join(map(str, digits))
+
+# Main game code 
+def play():
+    secret = secretCode()
+    attempts = 0
+
+    print("Welcome to the Cows and Bulls game!")
+    print("Try to guess the 4-digit secret code with unique digits.")
+
+    while True:
+        guess = input("Enter your guess: ")
+        if len(guess) != 4 or not guess.isdigit():
+            print("Please enter a valid 4-digit number.")
+            continue
+
+        attempts += 1
+        bulls, cows = evaluateGuess(secret, guess)
+
+        if bulls == 4:
+            print(f"Congratulations! You guessed the secret code {secret} in {attempts} attempts.")
+            break
+        else:
+            print(f"{bulls} bulls, {cows} cows")
+            
+# Check the guess against the secret code and return the number of bulls and cows
+def evaluateGuess(secret, guess):
+    bulls, cows = 0, 0
+    for i in range(4):
+        if guess[i] == secret[i]:
+            bulls += 1
+        elif guess[i] in secret:
+            cows += 1
+    return bulls, cows
+    
+# This code only runs when you execute the script directly
+if __name__ == "__main__":
+    play()
+
+
