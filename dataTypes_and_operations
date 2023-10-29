@@ -1,0 +1,61 @@
+
+#State the Date, Month, and Year using Numbers and String
+day = 'Date:'
+month = "September"               #string
+date = 21                    	         	  #numbers
+year = 2023                              #numbers
+print(day)          
+print(month, date, year)
+
+#Membership Operator to test if the month is correct
+print("Does month states that its september?")
+print("September" in month)
+
+#Logical Operator to test if the date is correct
+print("Is the date correct?")
+if((date==21) and (year==2023)):
+    print ("The date and year is correct")
+else: 
+    print ("The date is wrong")
+
+#Show project requirements using List
+project = 'Activity Requirements:'
+requirements = ['numbers', 'strings', 'lists', 'tuples', 'dictionary', 'operators' ]
+print (project)
+print(requirements)
+
+#State name, birthday and age using Tuple and Operators
+print('Personal Details')
+age = 18
+birthYear = 2004
+details = 'Name, Birthdate, and Sex:'
+personal = ('Aejay Boy L. Macasa' , 'October 18, 2004', 'Male')
+print ("Current age:")
+print(age)
+
+
+
+
+
+#Compute the age for this year October 2023 
+futureAge = "Age in this year's October:"
+print (details)
+print(personal)
+print (futureAge)
+
+#Arithmetic Operation (Subtraction) to compute estimated age
+ageSoon = year-birthYear
+print(ageSoon)
+
+#Comparison (Relational) Operators to ensure that the calculated age is correct
+if ( ageSoon == 19 ):
+    print ("The calculation of the age is accurate")
+else:
+    print ("The calculation is wrong. It should be your year of birth and the current")
+
+#State hobbies by using dictionary
+hobby = 'Hobbies:'
+hobbies = {"Reading": 'books', "Watching": 'anime and tv shows', "Listening to music": 'Rhythms and Blues'
+    }
+print (hobby)
+print (hobbies)
