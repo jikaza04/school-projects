@@ -1,0 +1,53 @@
+def length_converter():
+    print("Welcome to the Length Unit Converter!")
+    print("Available units: Meters (m), Feet (ft), Inches (in), Centimeters (cm)")
+
+    # Input unit and value
+    from_unit = input("Enter the source unit (m/ft/in/cm): ").strip().lower()
+    to_unit = input("Enter the target unit (m/ft/in/cm): ").strip().lower()
+
+    try:
+        value = float(input("Enter the value to convert: "))
+    except ValueError:
+        print("Invalid input. Please enter a numeric value.")
+        return
+
+    # Conversion factors using a NESTED DICTIONARY
+    # These specific values are based on the international standard units of measurement
+    conversion_factors = {
+        'm': {
+            'ft': 3.28084,
+            'in': 39.3701,
+            'cm': 100,
+        },
+        'ft': {
+            'm': 0.3048,
+            'in': 12,
+            'cm': 30.48,
+        },
+        'in': {
+            'm': 0.0254,
+            'ft': 0.0833333,
+            'cm': 2.54,
+        },
+        'cm': {
+            'm': 0.01,
+            'ft': 0.0328084,
+            'in': 0.393701,
+        }
+    }
+
+
+    # Must use square brackets [] to access the dictionary
+    # You may use an f" string to print a message with variables and values
+
+    if from_unit in conversion_factors and to_unit in conversion_factors:
+        converted_value = value * conversion_factors[from_unit][to_unit] 
+        print(f"{value} {from_unit} is equal to {converted_value:.2f} {to_unit}")
+    # The converted_value is formatted as a float with 2 decimal places (.2f)
+    else:
+        print("Conversion not supported for these units.")
+
+# This set the program as a main so that you could run it directly 
+if __name__ == "__main__":
+    length_converter()
